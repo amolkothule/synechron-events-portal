@@ -1,0 +1,22 @@
+<h1 [innerText]="title"></h1>
+<br>
+<table class="table table-hover table-striped">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Post Id</th>
+            <th>Post Title</th>
+            <th>Description</th>
+            <tr>
+        
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let post of posts">
+            <td [innerText]="post.userId"></td>
+            <td [innerText]="post.id"></td>
+            <td [innerText]="post.title"></td>
+            <td [innerText]="post.body"></td>
+        </tr>
+    </tbody>
+</table>
