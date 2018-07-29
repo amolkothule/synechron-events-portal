@@ -4,7 +4,9 @@ import '@angular/common';
 import '@angular/platform-browser';
 import '@angular/platform-browser-dynamic';
 import '@angular/forms';
+import '@angular/router'
 import 'rxjs';
+
 
 //Third party Packages [jQuery/Bootstrap..]
 import 'jquery';

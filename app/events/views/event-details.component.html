@@ -1,3 +1,4 @@
+<div *ngIf="event">
 <h1 [innerText]="title+event.eventName">
 </h1>
 <table class="table table-hover table-striped">
@@ -68,4 +69,6 @@
     </tr>
 </table>
 
-<button class="btn btn-danger" (click)="onSendConfirmation()">Send Confirmation</button>
+<!-- <button class="btn btn-danger" (click)="onSendConfirmation()">Send Confirmation</button> -->
+
+</div>

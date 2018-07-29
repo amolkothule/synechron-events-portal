@@ -38,13 +38,14 @@
                 <span [innerText]="event.fees | currency: 'USD' "></span>
             </td>
             <td>
-                <button class="btn btn-success" (click)="onEventSelection(event)">Show Details</button>
+                <!-- <button class="btn btn-success" (click)="onEventSelection(event)">Show Details</button> -->
+                <button class="btn btn-success" routerLink ="/events/{{event.eventId}}">Show Details</button>
             </td>
         </tr>
     </tbody>
 </table>
 
-<div *ngIf="selectedEvent">
+<!-- <div *ngIf="selectedEvent">
     <event-details [receivedEventId]="selectedEvent.eventId" (onConfirmation)="onChildConfirmation($event)"></event-details>
-    <!-- $event is payload object is from typescript-->
-</div>
+    <!-- $event is payload object is from typescript>
+</div> -->

@@ -1,0 +1,71 @@
+<h1 [innerText]="pageTitle"></h1>
+<hr>
+<form class="form-horizontal" [formGroup]="employee.employeeForm">
+    <fieldset>
+        <div class="form-group">
+            <label for="inputEmployeeId" class="col-lg-2 control-label">Employee Id</label>
+            <div class="col-lg-10">
+                <input type="number" class="form-control" id="inputEmployeeId" name="inputEmployeeId"  placeholder="Employee Id" autofocus formControlName="employeeId">
+                <div class="alert alert-danger" *ngIf="employee.employeeForm.controls['employeeId'].hasError('required')">
+                    Please enter Employee ID
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEventCode" class="col-lg-2 control-label">Employee Name</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEventCode" name="inputEventCode" placeholder="Employee Name" formControlName="employeeName">
+                <div class="alert alert-danger" *ngIf="employee.employeeForm.controls['employeeName'].hasError('required')">
+                    Please Employee Name
+                </div>
+                <div class="alert alert-danger" *ngIf="employee.employeeForm.controls['employeeName'].hasError('maxlength')">
+                    Event Code must be 5 or less than 5 characters
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEventCode" class="col-lg-2 control-label">Phone</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEventCode" name="inputEventCode" placeholder="Enter Phone" formControlName="phone">
+                <div class="alert alert-danger" *ngIf="employee.employeeForm.controls['phone'].hasError('required')">
+                    Please Enter Mobile Number
+                </div>
+                <div class="alert alert-danger" *ngIf="employee.employeeForm.controls['phone'].hasError('maxlength')">
+                    Must be of 10 digit
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEventName" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEventName" name="inputEventName" placeholder="Enter Email" formControlName="email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEventName" class="col-lg-2 control-label">Address</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEventName" name="inputEventName" placeholder="Enter Address" formControlName="address">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEventName" class="col-lg-2 control-label">City</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEventName" name="inputcity" placeholder="Enter city" formControlName="city">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="inputEventDescription" class="col-lg-2 control-label">Avatar</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputEventDescription" name="inputEventDescription" placeholder="select Image" formControlName="avatar">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="button" [disabled]="!employee.employeeForm.valid" (click)="registerNewEmployee()" class="btn btn-primary">Add New Employee</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
